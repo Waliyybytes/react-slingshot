@@ -40,10 +40,9 @@ jobs:
       - restore_cache:
           keys: 
             - "npm-packages"
-      - run: npm i
       - run:
           name: analyse
-          command: npm run audit
+          command: npm audit
 workflows:
   ci_pipeline:
     jobs:
