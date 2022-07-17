@@ -11,10 +11,6 @@ jobs:
     steps:
       - checkout
       - run: npm i
-      - save_cache:
-          key: "npm-packages"
-          paths: 
-            - /src/node_modules
       - run:
           name: lint
           command: npm run lint
@@ -24,9 +20,6 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - restore_cache:
-          keys: 
-            - "npm-packages"
       - run: npm i
       - run:
           name: test 
@@ -37,9 +30,6 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - restore_cache:
-          keys: 
-            - "npm-packages"
       - run:
           name: analyse
           command: npm audit
