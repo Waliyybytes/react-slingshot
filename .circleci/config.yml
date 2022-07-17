@@ -40,6 +40,7 @@ jobs:
       - restore_cache:
           keys: 
             - "npm-packages"
+      - run: npm i
       - run:
           name: analyse
           command: npm run audit
